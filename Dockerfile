@@ -6,7 +6,7 @@ RUN apk add --no-cache --virtual dev build-base cmake ninja \
     tar xzf swipl-8.5.15.tar.gz && \
     rm swipl-8.5.15.tar.gz && \
     cd swipl-8.5.15 && \
-    cmake -B /tmp -G Ninja && \
+    cmake -DINSTALL_DOCUMENTATION=OFF -B /tmp -G Ninja && \
     ninja -C /tmp install && \
     cd / && \
     rm -rf /tmp/* /swipl-8.5.15
