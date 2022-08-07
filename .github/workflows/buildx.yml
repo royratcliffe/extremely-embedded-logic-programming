@@ -13,10 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # https://github.com/docker/setup-qemu-action
+      # See https://github.com/docker/setup-buildx-action
+      # and https://github.com/docker/setup-qemu-action for details.
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-      # https://github.com/docker/setup-buildx-action
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
         # Use "install" of true in order to avoid the warning message: The
