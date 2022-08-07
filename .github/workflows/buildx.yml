@@ -2,9 +2,9 @@ name: buildx
 
 on:
   pull_request:
-    branches: main
+    branches: [main]
   push:
-    branches: main
+    branches: [main]
 
 jobs:
   buildx:
@@ -19,6 +19,9 @@ jobs:
       # https://github.com/docker/setup-buildx-action
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        # Use "install" of true in order to avoid the warning message: The
+        # requested image's platform (linux/arm/v7) does not match the detected
+        # host platform (linux/amd64) and no specific platform was requested!
         with:
           install: true
 
